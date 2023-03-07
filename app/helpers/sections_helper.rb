@@ -10,14 +10,16 @@ module SectionsHelper
   # template - The template that phase belongs to
   #
   # Returns String
-  def header_path_for_section(section, phase, template)
+  def header_path_for_section(section, phase, template, preference)
     if section.modifiable?
       edit_org_admin_template_phase_section_path(template_id: template.id,
                                                  phase_id: phase.id,
+                                                 preference_id: preference.id,
                                                  id: section.id)
     else
       org_admin_template_phase_section_path(template_id: template.id,
-                                            phase_id: phase.id,
+                                            phase_id: phase.id, 
+                                            preference_id: preference.id,
                                             id: section.id)
     end
   end
