@@ -4,7 +4,6 @@
 #
 # Table name: repositories_templates
 #
-#  id               :integer          not null, primary key
 #  template_id      :integer
 #  repository_id    :integer
 #
@@ -18,7 +17,7 @@
 # Object that represents a DMP template
 # rubocop:disable Metrics/ClassLength
 
-class Preference < ApplicationRecord
+class RepositoriesTemplates < ApplicationRecord
     has_many :templates
     has_many :repositories
 end
