@@ -5,12 +5,12 @@ module OrgAdmin
     class TemplatesRepositoriesController < ApplicationController
       include Versionable
         def set_templates_repositories
-        @templates_repositories = Templates_Repositories.find(params[:id])
+        @templates_repositories = templates.find(params[:id])
         end
 
-      # POST /org_admin/templates/:template_id/phases/:phase_id/versions
+      # POST /org_admin/templates/:template_id/Templates_Repositories
         def new
-            @templates_repositories = Article.new
+            @templates_repositories = Templates_Repositories.new
         end
     
         def create
@@ -28,6 +28,10 @@ module OrgAdmin
             # the template: :links context.
             params.require(:template).permit(:repositories)
         end
+
+        def update
+            
+        end 
   
     end
 end
