@@ -83,6 +83,8 @@ class Template < ApplicationRecord
 
   has_many :conditions, through: :questions
 
+  has_many :repositories, :through => :repositories_templates
+
   # ----------------------------------------
   # Start DMPTool Customization
   # ----------------------------------------

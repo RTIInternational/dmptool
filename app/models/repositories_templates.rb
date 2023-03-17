@@ -18,6 +18,22 @@
 # rubocop:disable Metrics/ClassLength
 
 class RepositoriesTemplates < ApplicationRecord
+  
+  
+  # ================
+  # = Associations =
+  # ================
     has_many :templates
     has_many :repositories
+  # ===============
+  # = Validations =
+  # ===============
+  validates :template, presence: { message: PRESENCE_MESSAGE }
+  validates :repositories, presence: { message: PRESENCE_MESSAGE }
+  # ==========
+  # = Scopes =
+  # ==========
+
+  # Retrieves any repository related to the template
+  scope :repo_list, -> { where(template_id: template.id) }
 end

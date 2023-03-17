@@ -92,6 +92,7 @@ class Repository < ApplicationRecord
   # ================
 
   has_and_belongs_to_many :research_outputs
+  has_many :templates, :through => :repositories_templates
 
   # ==========
   # = Scopes =
