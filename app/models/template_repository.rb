@@ -17,7 +17,7 @@
 # Object that represents a DMP template
 # rubocop:disable Metrics/ClassLength
 
-class RepositoriesTemplates < ApplicationRecord
+class TemplateRepository< ApplicationRecord
   
   
   # ================

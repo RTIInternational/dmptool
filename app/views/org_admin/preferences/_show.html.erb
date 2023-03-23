@@ -1,7 +1,7 @@
 <div class="form-group col-xs-8">
   <%= f.label(:title, _('Preferred repositories'), class: "control-label") %>
   <%= f.check_box(:restriction, class: "control-label") %>
-  Require Researchers select from this list.
+  <%= f.label(:title, _('Require Researchers select from this list:'), class: "control-label") %>
 </div>
 <% if Rails.configuration.x.madmp.enable_repository_selection && Repository.all.any? %>
   <div class="form-group row">
@@ -11,10 +11,10 @@
       </span>
     </div>
   </div>
-<div class="form-group col-xs-8">
+  <div class="form-group col-xs-8">
   <%= f.button(_('Add a repository'), class: 'btn btn-default', type: "submit", disabled="disabled") %>
       <div class="form-group row">
-      <%= render partial: "layouts/modal_search/adminselections",
+        <%= render partial: "layouts/modal_search/adminselections",
                 locals: {
                   namespace: "metadata_standards",
                   button_label: _("Add a repository"),
