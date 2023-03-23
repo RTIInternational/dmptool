@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_13_183712) do
+ActiveRecord::Schema.define(version: 2023_03_23_144335) do
 
 # Could not dump table "annotations" because of following ActiveRecord::StatementInvalid
 #   Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NULL' at line 1
@@ -166,15 +166,6 @@ ActiveRecord::Schema.define(version: 2023_03_13_183712) do
     t.index ["research_output_id"], name: "index_repositories_research_outputs_on_research_output_id"
   end
 
-  create_table "repositories_templates", id: false, force: :cascade do |t|
-    t.integer "templates_id"
-    t.integer "repositories_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["repositories_id"], name: "index_repositories_templates_on_repositories_id"
-    t.index ["templates_id"], name: "index_repositories_templates_on_templates_id"
-  end
-
 # Could not dump table "research_domains" because of following ActiveRecord::StatementInvalid
 #   Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NULL' at line 1
 
@@ -206,6 +197,15 @@ ActiveRecord::Schema.define(version: 2023_03_13_183712) do
 
 # Could not dump table "subscriptions" because of following ActiveRecord::StatementInvalid
 #   Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NULL' at line 1
+
+  create_table "template_repositories", id: false, force: :cascade do |t|
+    t.integer "templates_id"
+    t.integer "repositories_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["repositories_id"], name: "index_template_repositories_on_repositories_id"
+    t.index ["templates_id"], name: "index_template_repositories_on_templates_id"
+  end
 
 # Could not dump table "templates" because of following ActiveRecord::StatementInvalid
 #   Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NULL' at line 1
