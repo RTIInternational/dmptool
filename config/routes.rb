@@ -410,7 +410,7 @@ Rails.application.routes.draw do
         get 'organisational'
         get 'customisable'
       end
-
+      resources :preferences, only: [:new], controller: 'template_repositories'
       resources :phases, except: [:index] do
         resources :versions, only: [:create], controller: 'phase_versions'
 
