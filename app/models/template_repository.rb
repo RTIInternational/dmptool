@@ -14,15 +14,13 @@
 #  fk_rails_...  (template_id => template.id)
 #  fk_rails_...  (repository_id => respository.id)
 
-# Object that represents a DMP template
-# rubocop:disable Metrics/ClassLength
-
+# Object that represents a DMP template and repository relationship
 class TemplateRepository < ApplicationRecord
   # ================
   # = Associations =
   # ================
-    has_many :templates
-    has_many :repositories
+  has_many :templates
+  has_many :repositories
   # ===============
   # = Validations =
   # ===============
