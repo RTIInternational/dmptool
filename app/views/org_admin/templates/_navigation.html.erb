@@ -8,14 +8,14 @@
       <%= link_to(phase.title, phase_path, { 'aria-controls': "#{phase.id}", role: 'tab' }) %>
     </li>
   <% end %>
-  <!-- Restrict Repositories to preferred repositories  -->
-  <li role="presentation" <%= active_page?(new_org_admin_template_preference_path(template.id)) ? ' class=active' : '' %>>
-    <%= link_to(_('Preferences'), new_org_admin_template_preference_path(template.id), { 'aria-controls': 'add_preferences', role: 'tab' }) %>
-  </li>
   <!-- Add another phase button -->
   <% if template_modifiable?(template) %>
     <li role="presentation" <%= active_page?(new_org_admin_template_phase_path(template.id)) ? ' class=active' : '' %>>
       <%= link_to(_('Add new phase'), new_org_admin_template_phase_path(template.id), { 'aria-controls': 'add_phase', role: 'tab' }) %>
     </li>
   <% end %>
+  <!-- Restrict Repositories to preferred repositories  -->
+  <li role="presentation" <%= active_page?(new_org_admin_template_preference_path(template.id)) ? ' class=active' : '' %>>
+    <%= link_to(_('Preferences'), new_org_admin_template_preference_path(template.id), { 'aria-controls': 'add_preferences', role: 'tab' }) %>
+  </li>
 </ul>
